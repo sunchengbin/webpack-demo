@@ -1,0 +1,29 @@
+{
+  "name": "webpack-demo",
+  "version": "1.0.0",
+  "description": "my first webpack demo",
+  "main": "app.js",
+  "scripts": {
+    "dev": "node some-node-script"
+  },
+  "author": "sun",
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.1.1",
+    "css-loader": "^0.28.4",
+    "glob": "^7.1.2",
+    "html-webpack-plugin": "^2.29.0",
+    "ts-loader": "^2.2.2",
+    "webpack": "^2.6.1",
+    "webpack-dev-middleware": "^1.10.0",
+    "webpack-hot-middleware": "^2.18.0",
+    "webpack-merge": "^4.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sunchengbin/webpack-demo.git"
+  }
+}
