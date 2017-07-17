@@ -1,4 +1,23 @@
-@import './base/base.scss'
+@import "../base/base.scss";
 body{
   color:$base-color;
+}
+.logo{
+  width: 100px;
+  height: 100px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('../../asset/logo.jpeg');
+}
+.error{
+  width: 100px;
+  height: 100px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('../../asset/404.png');
+}
+.icon-box{
+  font-size:18px;
 }

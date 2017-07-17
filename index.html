@@ -8,12 +8,20 @@
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
     <title>webpack-demo</title>
+    <link rel="stylesheet" type="text/css" href="./src/dist/index/index.css"/>
 </head>
 <body>
+  <header class="logo"></header>
+  <div class="icon-box">
+  <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-minus-font"></use>
+  </svg>
+  </div>
   <div class="main">
       welcome webpack demo
   </div>
+  <div class="error"></div>
 </body>
 <script src="./src/js/base/require-zepto.js"></script>
-<script src="./src/js/dist/index.js"></script>
+<script src="./src/dist/index/index.js"></script>
 </html>
