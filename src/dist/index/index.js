@@ -1,1 +1,1 @@
-webpackJsonp([0],{6:function(n,e,o){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var t=o(0),c=(o.n(t),o(1)),i=(o.n(c),o(2)),u=o.n(i),r=o(7);o.n(r);window.onload=function(){document.querySelector(".main").innerHTML+=u.a.html}},7:function(n,e){}},[6]);
+webpackJsonp([0],{6:function(n,e,t){"use strict";t(0),t(1);var o=t(2),u=function(n){return n&&n.__esModule?n:{default:n}}(o);t(7),window.onload=function(){document.querySelector(".main").innerHTML+=u.default.html}},7:function(n,e){}},[6]);

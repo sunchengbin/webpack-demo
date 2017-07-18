@@ -46,14 +46,18 @@ module.exports = {
       filename: "[name]/[name].js",        //根据入口文件输出的对应多个文件名
     },
     module: {
-        loaders: [
-          {
-              test: /\.js/,
-              loader: 'babel-loader',
-              include: __dirname + '/src/js'
-          }
-        ],
         rules: [
+          {
+            enforce: "pre",
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: "eslint-loader",
+          },
+          {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: "babel-loader",
+          },
           {
             test: /\.scss$/,
             use: extractPlugin.extract({
