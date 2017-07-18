@@ -1,24 +1,28 @@
 const path = require('path')
-const webpack = require('webpack') //to access built-in plugins
+const webpack = require('webpack')
 const fs = require('fs')
 const extractPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ModulePlugins = [
+  //uglify js
   new webpack.optimize.UglifyJsPlugin({
        compress: {
            warnings: false
        }
   }),
+  //chunk common's js
   new webpack.optimize.CommonsChunkPlugin({
     name:"commons",
     filename:"common/common.js",
     minChunks:2,
     chunks:["index","detail"]
   }),
+  //extract scss and transform this to css
   new extractPlugin({
       filename: "[name]/[name].css"
   })
 ]
+//get the pathes of app's js
 function getEntry() {
     let jsPath = path.resolve(__dirname, 'src/js/app')
     let dirs = fs.readdirSync(jsPath)
