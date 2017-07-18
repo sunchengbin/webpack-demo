@@ -3,9 +3,6 @@ const webpack = require('webpack') //to access built-in plugins
 const fs = require('fs')
 const extractPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const extractSass = new extractPlugin({
-    filename: "[name]/[name].css"
-})
 const ModulePlugins = [
   new webpack.optimize.UglifyJsPlugin({
        compress: {
@@ -18,7 +15,9 @@ const ModulePlugins = [
     minChunks:2,
     chunks:["index","detail"]
   }),
-  extractSass
+  new extractPlugin({
+      filename: "[name]/[name].css"
+  })
 ]
 function getEntry() {
     let jsPath = path.resolve(__dirname, 'src/js/app')
@@ -59,9 +58,11 @@ module.exports = {
             test: /\.scss$/,
             use: extractPlugin.extract({
               fallback: 'style-loader',
-              //resolve-url-loader may be chained before sass-loader if necessary
               use: [{
-                  loader: "css-loader"
+                  loader: "css-loader",
+                  options: {
+                    minimize: true
+                  }
               }, {
                   loader: "sass-loader",
                   options: {
@@ -74,10 +75,10 @@ module.exports = {
             test: /.(png|gif|jpe?g|svg)$/,
             loader: 'url-loader',
             query: {
-              limit: 10240
+              limit: 10000
             }
           }
         ]
     },
-    plugins: getEntry().htmls.concat(ModulePlugins)
+    plugins: ModulePlugins
 }
