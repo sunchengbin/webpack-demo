@@ -1,23 +1,64 @@
 @import "../base/base.scss";
+html,body{
+  height: 100%;
+}
 body{
   color:$base-color;
+  display: flex;
+  flex-direction: column;
 }
-.logo{
-  width: 100px;
-  height: 100px;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-image: url('../../asset/logo.jpeg');
+header,footer{
+  flex-grow:0;
+  @include remCalc(height,72);
+  @include remCalc(line-height,72);
+  @include remCalc(padding,0 30);
+  background-color: $base-bg-color;
 }
-.error{
-  width: 100px;
-  height: 100px;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-image: url('../../asset/404.png');
+footer{
+  text-align: center;
 }
-.icon-box{
-  font-size:18px;
+header{
+  .logo{
+    display: inline-block;
+    vertical-align: middle;
+    @include remCalc(height,72);
+    @include remCalc(width,72);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../../asset/logo.jpeg');
+  }
+}
+.main{
+  text-align: center;
+  flex-grow:2;
+  .icon-box{
+    @include fontDpr(18px);
+  }
+  .error{
+    @include remCalc(height,72);
+    @include remCalc(width,72);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../../asset/404.png');
+  }
+  .list-ul{
+    display:flex;
+    flex-wrap:wrap;
+    li{
+      width: 50%;
+      box-sizing: border-box;
+      @include remCalc(padding,30);
+      div{
+        @include remCalc(height,72);
+      }
+    }
+    li:nth-child(even) > div{
+      background-color: red;
+    }
+    li:nth-child(odd) > div{
+      background-color: blue;
+    }
+  }
 }

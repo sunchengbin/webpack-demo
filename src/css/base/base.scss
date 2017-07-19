@@ -1,9 +1,5 @@
 @import "./variate.scss";
 @import "./reset.scss";
-// icon-font
-.icon {
-  width: 1em; height: 1em;
-  vertical-align: -0.15em;
-  fill: currentColor;
-  overflow: hidden;
-}
+@import "./mixin.scss";
+@import "./flex.scss";
+@import "./common.scss";
