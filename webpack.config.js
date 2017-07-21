@@ -20,7 +20,17 @@ const ModulePlugins = [
   //extract scss and transform this to css
   new extractPlugin({
       filename: "[name]/[name].css"
-  })
+  }),
+  new HtmlWebpackPlugin({
+    filename: 'index.html',
+    template: 'index.html',
+    inject: true
+  }),
+  new webpack.HotModuleReplacementPlugin() // Enable HMR
+  //for hot-module-reload
+  // new webpack.optimize.OccurenceOrderPlugin(),
+  // new webpack.HotModuleReplacementPlugin(),
+  // new webpack.NoErrorsPlugin()
 ]
 //get the pathes of app's js
 function getEntry() {
@@ -48,6 +58,12 @@ module.exports = {
       path: path.join(__dirname, "src/dist/"), //文件输出目录
       publicPath: "http://www.workspace.com/webpack-demo/src/dist/",        //用于配置文件发布路径，如CDN或本地服务器
       filename: "[name]/[name].js",        //根据入口文件输出的对应多个文件名
+    },
+    devtool: 'inlie-source-map',
+    devServer: {
+        contentBase: 'http://www.workspace.com/webpack-demo',
+        publicPath: "/",
+        hot: true
     },
     module: {
         rules: [

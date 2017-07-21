@@ -1,4 +1,4 @@
-@import "../base/base.scss";
+@import "../base/base";
 html,body{
   height: 100%;
 }
@@ -6,6 +6,7 @@ body{
   color:$base-color;
   display: flex;
   flex-direction: column;
+  background-color: white;
 }
 header,footer{
   flex-grow:0;
@@ -16,6 +17,7 @@ header,footer{
 }
 footer{
   text-align: center;
+  color: black;
 }
 header{
   .logo{
@@ -32,6 +34,7 @@ header{
 .main{
   text-align: center;
   flex-grow:2;
+  overflow: scroll;
   .icon-box{
     @include fontDpr(18px);
   }

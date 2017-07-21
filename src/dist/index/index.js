@@ -1,1 +1,1 @@
-webpackJsonp([0],{6:function(n,e,t){"use strict";t(0),t(1);var o=t(2),u=function(n){return n&&n.__esModule?n:{default:n}}(o);t(7),window.onload=function(){document.querySelector(".main").innerHTML+=u.default.html}},7:function(n,e){}},[6]);
+webpackJsonp([0],{6:function(t,e,o){"use strict";o(1),o(2);var c=o(0),n=function(t){return t&&t.__esModule?t:{default:t}}(c);o(7),t.hot.accept(0,function(){console.log("accept the update library module test this"),n.default.log()})},7:function(t,e){}},[6]);

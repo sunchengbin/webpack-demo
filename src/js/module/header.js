@@ -1,4 +1,6 @@
-module.exports = {
-  title: 'header-title',
-  html: '<h1>this is my header</h1>'
+export default {
+  log() {
+    // Change this after the server is started to test
+    console.log('Initial log...')
+  }
 }
