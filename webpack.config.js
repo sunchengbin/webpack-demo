@@ -20,13 +20,13 @@ const ModulePlugins = [
   //extract scss and transform this to css
   new extractPlugin({
       filename: "[name]/[name].css"
-  }),
-  new HtmlWebpackPlugin({
-    filename: 'index.html',
-    template: 'index.html',
-    inject: true
-  }),
-  new webpack.HotModuleReplacementPlugin() // Enable HMR
+  })
+  // new HtmlWebpackPlugin({
+  //   filename: 'index.html',
+  //   template: 'index.html',
+  //   inject: true
+  // }),
+  // new webpack.HotModuleReplacementPlugin() // Enable HMR
   //for hot-module-reload
   // new webpack.optimize.OccurenceOrderPlugin(),
   // new webpack.HotModuleReplacementPlugin(),
@@ -59,12 +59,7 @@ module.exports = {
       publicPath: "http://www.workspace.com/webpack-demo/src/dist/",        //用于配置文件发布路径，如CDN或本地服务器
       filename: "[name]/[name].js",        //根据入口文件输出的对应多个文件名
     },
-    devtool: 'inlie-source-map',
-    devServer: {
-        contentBase: 'http://www.workspace.com/webpack-demo',
-        publicPath: "/",
-        hot: true
-    },
+    devtool: 'source-map',
     module: {
         rules: [
           {
@@ -85,12 +80,14 @@ module.exports = {
               use: [{
                   loader: "css-loader",
                   options: {
-                    minimize: true
+                    minimize: true,
+                    sourceMap: true
                   }
               }, {
                   loader: "sass-loader",
                   options: {
-                      includePaths: [__dirname+"/src/css/app",__dirname+"/src/css/base"]
+                      includePaths: [__dirname+"/src/css/app",__dirname+"/src/css/base"],
+                      sourceMap: true
                   }
               }]
             })

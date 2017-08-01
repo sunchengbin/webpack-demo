@@ -1,1 +1,1 @@
-webpackJsonp([0],{6:function(t,e,o){"use strict";o(1),o(2);var c=o(0),n=function(t){return t&&t.__esModule?t:{default:t}}(c);o(7),t.hot.accept(0,function(){console.log("accept the update library module test this"),n.default.log()})},7:function(t,e){}},[6]);
+webpackJsonp([0],{6:function(n,c,o){"use strict";o(0),o(1);var t=o(2);!function(n){n&&n.__esModule}(t);o(7)},7:function(n,c){}},[6]);

@@ -1,1 +1,1 @@
-webpackJsonp([1],[,,,function(n,e,t){"use strict";t(1),t(2);var o=t(0),u=function(n){return n&&n.__esModule?n:{default:n}}(o);t(4),window.onload=function(){document.querySelector(".main").innerHTML+=u.default.html+"sfsdfs"}},function(n,e){}],[3]);
+webpackJsonp([1],[,,,function(n,e,t){"use strict";t(0),t(1);var o=t(2),u=function(n){return n&&n.__esModule?n:{default:n}}(o);t(4),window.onload=function(){document.querySelector(".main").innerHTML+=u.default.html+"sfsdfs"}},function(n,e){}],[3]);
